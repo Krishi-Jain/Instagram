@@ -70,6 +70,10 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self getPosts];
+}
+
 
 #pragma mark - Navigation
 

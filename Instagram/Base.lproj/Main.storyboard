@@ -105,25 +105,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-2D-SaF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b2g-2D-SaF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="218" id="2z8-vs-WwD"/>
+                                                        <constraint firstAttribute="width" constant="414" id="QSe-UU-5Ek"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Krishi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-f5-Uxp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Krishi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-f5-Uxp">
                                                     <rect key="frame" x="20" y="226" width="51" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="51" id="YPh-lW-yt9"/>
+                                                        <constraint firstAttribute="height" constant="43" id="pbs-s5-Ail"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, this is caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3O-ga-gk4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, this is caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3O-ga-gk4">
                                                     <rect key="frame" x="79" y="237" width="315" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="315" id="8Zl-GD-C3X"/>
+                                                        <constraint firstAttribute="height" constant="21" id="fPf-fm-UKQ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b2g-2D-SaF" firstAttribute="leading" secondItem="mCL-vw-gKG" secondAttribute="leading" id="2an-Xz-4t1"/>
+                                                <constraint firstItem="TTc-f5-Uxp" firstAttribute="leading" secondItem="mCL-vw-gKG" secondAttribute="leadingMargin" id="3mu-NY-epc"/>
+                                                <constraint firstItem="TTc-f5-Uxp" firstAttribute="bottom" secondItem="mCL-vw-gKG" secondAttribute="bottomMargin" id="A24-ph-BLB"/>
+                                                <constraint firstItem="O3O-ga-gk4" firstAttribute="trailing" secondItem="mCL-vw-gKG" secondAttribute="trailingMargin" id="Fb9-gn-ZML"/>
+                                                <constraint firstItem="b2g-2D-SaF" firstAttribute="top" secondItem="mCL-vw-gKG" secondAttribute="top" id="d32-w1-ML6"/>
+                                                <constraint firstItem="O3O-ga-gk4" firstAttribute="top" secondItem="b2g-2D-SaF" secondAttribute="bottom" constant="19" id="j06-Hf-Gh1"/>
+                                                <constraint firstAttribute="trailing" secondItem="b2g-2D-SaF" secondAttribute="trailing" id="sKI-Mf-5bo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O3O-ga-gk4" secondAttribute="bottom" constant="11" id="ySA-1j-hgx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
