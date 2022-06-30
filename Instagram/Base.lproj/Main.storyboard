@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,7 +33,7 @@
                                 <rect key="frame" x="80" y="396" width="255" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-z4-tlr">
                                 <rect key="frame" x="241" y="461" width="97" height="31"/>
@@ -99,8 +98,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="280" id="gbu-n1-4ZZ">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="280"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="280" id="gbu-n1-4ZZ" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbu-n1-4ZZ" id="mCL-vw-gKG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
@@ -135,7 +134,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="46O-mf-vB4">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="5YF-Mx-1cw">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lWB-ma-Dq2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lWB-ma-Dq2">
                                 <rect key="frame" x="20" y="11" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -146,7 +145,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="qmM-dz-p8J">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jhu-DY-eKO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jhu-DY-eKO">
                                 <rect key="frame" x="302" y="8.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -173,19 +172,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Isq-JH-qqg">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Isq-JH-qqg">
                                 <rect key="frame" x="20" y="106" width="160" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="4sy-i9-1sG"/>
+                                    <constraint firstAttribute="width" constant="160" id="k0Y-CU-iJo"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7Aj-fR-hl7" appends="YES" id="RNJ-CB-7Mi"/>
+                                </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption .." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-eY-TVA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption .." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-eY-TVA">
                                 <rect key="frame" x="188" y="106" width="214" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p4t-nq-Y27"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Isq-JH-qqg" firstAttribute="leading" secondItem="p4t-nq-Y27" secondAttribute="leading" constant="20" id="CnJ-jn-VHD"/>
+                            <constraint firstItem="Aa2-eY-TVA" firstAttribute="leading" secondItem="Isq-JH-qqg" secondAttribute="trailing" constant="8" symbolic="YES" id="D0N-lM-A7e"/>
+                            <constraint firstItem="Aa2-eY-TVA" firstAttribute="top" secondItem="p4t-nq-Y27" secondAttribute="top" constant="50" id="Qs7-1n-Du2"/>
+                            <constraint firstItem="p4t-nq-Y27" firstAttribute="trailing" secondItem="Aa2-eY-TVA" secondAttribute="trailing" constant="12" id="hPl-K0-xIB"/>
+                            <constraint firstItem="Isq-JH-qqg" firstAttribute="top" secondItem="p4t-nq-Y27" secondAttribute="top" constant="50" id="rzG-vQ-CyQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="csA-6V-eR0">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="zva-cU-HLx">
@@ -195,6 +207,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                             </button>
+                            <connections>
+                                <action selector="didTapCancel:" destination="ap3-YI-lJK" id="QFV-v8-gx5"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hpZ-3r-pT7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vm4-xh-heD">
@@ -202,11 +217,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Post"/>
+                                <connections>
+                                    <action selector="didTapShare:" destination="ap3-YI-lJK" eventType="touchUpInside" id="nYT-tP-yzd"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ImagePost" destination="Isq-JH-qqg" id="SWw-Mg-IZn"/>
+                        <outlet property="captionPost" destination="Aa2-eY-TVA" id="ABG-ld-hjY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bag-nY-alh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7Aj-fR-hl7">
+                    <connections>
+                        <action selector="openCamera:" destination="ap3-YI-lJK" id="4VT-Ko-484"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2178" y="822"/>
         </scene>
@@ -220,7 +247,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="613" id="6mc-sq-HZk">
-                                <rect key="frame" x="0.0" y="50" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="613"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6mc-sq-HZk" id="vJw-kf-FsT">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="613"/>
@@ -317,6 +344,7 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">

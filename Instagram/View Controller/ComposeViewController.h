@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ComposeViewController : UIViewController
 
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *ImagePost;
+@property (weak, nonatomic) IBOutlet UITextField *captionPost;
 
 @end
 
