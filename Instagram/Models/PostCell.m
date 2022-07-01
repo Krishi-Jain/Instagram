@@ -14,6 +14,15 @@
     // Initialization code
 }
 
+-(void)setPost:(Post *)post {
+    _post = post;
+    self.postImageView.file = post[@"image"];
+    [self.postImageView loadInBackground];
+    self.captionLabel.text = post.caption;
+    self.usernameLabel.text = self.post.author.username;
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
