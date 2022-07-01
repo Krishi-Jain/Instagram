@@ -89,16 +89,13 @@
     }
     
     if([[segue identifier] isEqualToString:@"detailsSegue"]) {
-        UINavigationController *navigationController = [segue destinationViewController];
-        DetailViewController *detailsViewController = (DetailViewController *)navigationController.topViewController;
+        DetailViewController *detailsViewController = (DetailViewController *)[segue destinationViewController];
         UITableViewCell *cell = sender;
         NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
         Post *post = self.postsArray[indexpath.row];
         detailsViewController.post = post;
     }
-
 }
-
 
 
 - (nonnull UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

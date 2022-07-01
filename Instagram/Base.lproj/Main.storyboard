@@ -148,7 +148,7 @@
                                             <outlet property="captionLabel" destination="O3O-ga-gk4" id="4Qr-6V-Xkd"/>
                                             <outlet property="postImageView" destination="b2g-2D-SaF" id="aJ0-o8-zfc"/>
                                             <outlet property="usernameLabel" destination="TTc-f5-Uxp" id="hcX-97-FJd"/>
-                                            <segue destination="vai-qr-PzY" kind="presentation" id="IZA-m7-d3i"/>
+                                            <segue destination="vai-qr-PzY" kind="presentation" identifier="detailsSegue" id="IZA-m7-d3i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,7 +197,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXI-FD-9W8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXI-FD-9W8" customClass="PFImageView">
                                 <rect key="frame" x="20" y="129" width="374" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

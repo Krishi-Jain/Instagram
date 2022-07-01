@@ -16,20 +16,17 @@
 
 @implementation DetailViewController
 
-- (void)setPost:(Post *)post{
-    _post = post;
+- (void)viewDidLoad {
+    [super viewDidLoad];
     self.detailsCaption.text = self.post.caption;
+    self.deatailsUser.text = self.post.author.username;
+    self.detailsImage.file = self.post[@"image"];
     NSDate *postDate = self.post.createdAt;
     NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
     formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
     formatter.allowedUnits = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
     NSString *elapsed = [formatter stringFromDate:postDate toDate:[NSDate date]];
     self.deatilsDate.text = elapsed;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setPost:self.post];
 }
 
 - (IBAction)backButtonDetails:(id)sender {
