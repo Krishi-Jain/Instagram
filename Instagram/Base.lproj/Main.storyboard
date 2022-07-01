@@ -148,6 +148,7 @@
                                             <outlet property="captionLabel" destination="O3O-ga-gk4" id="4Qr-6V-Xkd"/>
                                             <outlet property="postImageView" destination="b2g-2D-SaF" id="aJ0-o8-zfc"/>
                                             <outlet property="usernameLabel" destination="TTc-f5-Uxp" id="hcX-97-FJd"/>
+                                            <segue destination="vai-qr-PzY" kind="presentation" id="IZA-m7-d3i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -193,7 +194,7 @@
             <objects>
                 <viewController id="vai-qr-PzY" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Mm-mD-JbM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXI-FD-9W8">
@@ -226,11 +227,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonDetails:" destination="vai-qr-PzY" eventType="touchUpInside" id="Cvx-0g-Chx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YVH-VF-Su8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="deatailsUser" destination="GTC-QP-eR1" id="JuU-j9-fOi"/>
+                        <outlet property="deatilsDate" destination="sjx-zM-MFE" id="frm-M9-Dg2"/>
+                        <outlet property="detailsCaption" destination="9RW-GZ-ezk" id="KxB-6g-7bx"/>
+                        <outlet property="detailsImage" destination="DXI-FD-9W8" id="ECY-rr-Ph9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBa-1b-IQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

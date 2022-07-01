@@ -12,6 +12,7 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "ComposeViewController.h"
+#import "DetailViewController.h"
 
 @interface HomeTimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -86,6 +87,16 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     }
+    
+    if([[segue identifier] isEqualToString:@"detailsSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        DetailViewController *detailsViewController = (DetailViewController *)navigationController.topViewController;
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
+        Post *post = self.postsArray[indexpath.row];
+        detailsViewController.post = post;
+    }
+
 }
 
 

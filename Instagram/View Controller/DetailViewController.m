@@ -6,6 +6,9 @@
 //
 
 #import "DetailViewController.h"
+#import <parse/Parse.h>
+#import "HomeTimelineViewController.h"
+@import Parse;
 
 @interface DetailViewController ()
 
@@ -13,9 +16,24 @@
 
 @implementation DetailViewController
 
+- (void)setPost:(Post *)post{
+    _post = post;
+    self.detailsCaption.text = self.post.caption;
+    NSDate *postDate = self.post.createdAt;
+    NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
+    formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
+    formatter.allowedUnits = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
+    NSString *elapsed = [formatter stringFromDate:postDate toDate:[NSDate date]];
+    self.deatilsDate.text = elapsed;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setPost:self.post];
+}
+
+- (IBAction)backButtonDetails:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
